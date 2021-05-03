@@ -7,6 +7,7 @@
 
 #include "../../utils/json/json.hpp"
 #include "../../utils/logs/TinyLog.h"
+#include "../../utils/fmt/core.h"
 #include "vector"
 #include "fstream"
 #include "iostream"

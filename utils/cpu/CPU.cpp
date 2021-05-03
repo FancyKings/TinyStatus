@@ -24,8 +24,8 @@ json CPU::get_usage() {
 
     double idle_delta = _idle_time - _pre_idle_time;
     double total_delta = _total_time - _pre_total_time;
-    usage["idle"] = 100.0 * (idle_delta / total_delta);
-    usage["active"] = 100.0 * (1.0 - idle_delta / total_delta);
+    usage["idle"] = fmt::format("{:.3f}", 100.0 * (idle_delta / total_delta));
+    usage["active"] = fmt::format("{:.3f}", 100.0 * (1.0 - idle_delta / total_delta));
     _pre_idle_time = _idle_time;
     _pre_total_time = _total_time;
     return usage;
