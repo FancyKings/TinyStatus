@@ -1,6 +1,6 @@
 {
   "name":"Demo",
-  "Description:":"Demo config file",
+  "description":"Demo config file",
   "remote_addr":"127.0.0.1",
   "remote_port":"7193",
   "password":"6VyahoKcOaVk9v07B1qkFowDHL",
@@ -8,12 +8,12 @@
   "interface":[
     {
       "name":"eth0",
-      "addr":"0.0.0.0"
+      "description":"0.0.0.0"
     },
     {
       "name":"lo",
-      "addr":"127.0.0.1"
+      "description":"0.0.0.0"
     }
   ],
-  "log_mod":"console"
+  "log_mode":"console"
 }
