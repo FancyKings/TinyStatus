@@ -9,7 +9,6 @@
 #include "string"
 
 class Config {
-private:
 public:
     const std::string &getName() const;
 

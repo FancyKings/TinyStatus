@@ -75,6 +75,14 @@ void Network::_get_if_vec() {
     }
 }
 
-bool Network::_invalid_if_name(const std::string& if_name) {
-     return static_cast<bool>(_if_valid_vec.count(if_name));
+bool Network::_invalid_if_name(const std::string &if_name) {
+    return static_cast<bool>(_if_valid_vec.count(if_name));
+}
+
+int Network::add_if_name(const std::string &if_name) {
+    if (_invalid_if_name(if_name)) {
+        return 0;
+    }
+    _if_vec.insert(if_name);
+    return 1;
 }

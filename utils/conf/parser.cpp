@@ -26,3 +26,7 @@ void Parser::read_users_config() {
     }
     _config->setNetInterface(net_if);
 }
+
+const std::shared_ptr<Config> &Parser::get_config() const {
+    return _config;
+}

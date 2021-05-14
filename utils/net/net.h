@@ -25,6 +25,7 @@ public:
     Network();
 
     json get_usage();
+    int add_if_name(const std::string &if_name);
 
 private:
     const static std::string _rx_link;

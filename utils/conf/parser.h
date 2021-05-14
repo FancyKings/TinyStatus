@@ -18,6 +18,7 @@ using json = nlohmann::json;
 class Parser {
 public:
     explicit Parser(std::string conf_path);
+    const std::shared_ptr<Config> &get_config() const;
 
 private:
     std::string _conf_path;
