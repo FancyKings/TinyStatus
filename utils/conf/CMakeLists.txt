@@ -1,1 +1,1 @@
-add_library(Parser parser.cpp parser.h config.cpp config.h)
+add_library(Parser SHARED parser.cpp parser.h config.cpp config.h)

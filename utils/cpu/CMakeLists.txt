@@ -1,1 +1,1 @@
-add_library(CPU CPU.cpp CPU.h)
+add_library(CPU SHARED CPU.cpp CPU.h)

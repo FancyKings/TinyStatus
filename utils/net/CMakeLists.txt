@@ -1,1 +1,1 @@
-add_library(Network net.cpp net.h)
+add_library(Network SHARED net.cpp net.h)

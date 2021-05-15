@@ -1,1 +1,1 @@
-add_library(Log TinyLog.h TinyLog.cpp)
+add_library(Log SHARED TinyLog.h TinyLog.cpp)
