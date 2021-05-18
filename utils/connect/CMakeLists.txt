@@ -1,0 +1,1 @@
+add_library(Connect SHARED connect.h connect.cpp)
