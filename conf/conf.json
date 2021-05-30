@@ -1,8 +1,8 @@
 {
   "name":"Demo",
   "description":"Demo config file",
-  "remote_addr":"127.0.0.1",
-  "remote_port":"7193",
+  "remote_addr":"172.22.192.1",
+  "remote_port":"8000",
   "password":"6VyahoKcOaVk9v07B1qkFowDHL",
   "interval":"5",
   "interface":[

@@ -44,13 +44,13 @@ bool Connect::_connect() {
     return true;
 };
 
-void Connect::send_msg(const std::string &message) {
+std::string Connect::send_msg(const std::string &message) {
     if (!_connect()) {
-        return;
+        return std::string();
     }
     send(_sock_id, message.c_str(), message.size(), 0);
     _connect_log->debug(fmt::format("Sent message {}", message.c_str()));
-    return;
+    return recv_msg();
 }
 
 std::string Connect::build_json_post(const json &message) {
@@ -58,7 +58,19 @@ std::string Connect::build_json_post(const json &message) {
             "POST /api/cpptest HTTP/1.1\r\n"
             "Host: {}\r\n"
             "Content-Type: application/json\r\n"
-            "Content-Length: {}\r\n\r\n"
+            "Content-Length: {}\r\n"
+            "Connection: close\r\n\r\n"
             "{}", _remote_addr, message.dump().size(), message.dump()
     );
+}
+
+std::string Connect::recv_msg() const {
+    char *buffer_recv = new char[1024];
+    std::string recv_msg;
+    auto recv_size = 0;
+    while ((recv_size = recv(_sock_id, buffer_recv, sizeof(buffer_recv) - 1, 0)) > 0) {
+        buffer_recv[recv_size] = '\0';
+        recv_msg += std::string(buffer_recv);
+    }
+    return recv_msg.append("\r\n");
 }

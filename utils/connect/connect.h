@@ -21,13 +21,15 @@ using json = nlohmann::json;
 
 class Connect {
 public:
-    explicit Connect(std::string remote_addr = "127.0.0.1",
+    explicit Connect(std::string remote_addr = "172.22.192.1",
                      std::string remote_port = "8080");
 
     bool set_addr_port(const std::string &remote_addr,
                        const std::string &remote_port);
 
-    void send_msg(const std::string &message);
+    std::string send_msg(const std::string &message);
+
+    std::string recv_msg() const;
 
     std::string build_json_post(const json &message);
 

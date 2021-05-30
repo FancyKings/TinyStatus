@@ -34,12 +34,11 @@ int main(int argc, char const * argv[]) {
 //        sleep(2);
 //    }
 
-    auto connect_sock = std::make_shared<Connect>("192.168.212.210", "8000");
+    auto connect_sock = std::make_shared<Connect>("172.22.192.1", "8000");
     json test;
     test["post"] = "json";
     std::string message = connect_sock->build_json_post(test);
-    logger->debug(message);
-    connect_sock->send_msg(message);
+    logger->debug(connect_sock->send_msg(message));
 
     return 0;
 }
